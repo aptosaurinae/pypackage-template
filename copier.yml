@@ -155,7 +155,13 @@ check_docs_accessibility_in_CI:
 
 open_source_license:
   help: Choose a license for your project.
-  default: not_open_source
+  default: |-
+        {% if project_visibility == 'public' -%}
+            {#- If set as not_open_source for a public repo the validator will error -#}
+            MIT
+        {%- else -%}
+            not_open_source
+        {%- endif %}
   choices:
     "Not open source":
       value: not_open_source
