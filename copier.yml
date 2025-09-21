@@ -80,7 +80,7 @@ module_name:
 
 project_short_description:
   type: str
-  default: "Python Boilerplate contains all the boilerplate you need to create a Python package."
+  placeholder: "Python Boilerplate contains all the boilerplate you need to create a Python package."
   help: A 1-sentence description of what your Python package does.
 
 project_visibility:
