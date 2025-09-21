@@ -86,16 +86,20 @@ project_short_description:
 project_visibility:
   type: str
   help: Repository visibility. Arup projects should be internal by default and can be considered for public release later.
-  default: internal
+  default: |-
+        {% if repository_owner != 'arup-group' -%}
+            {#- Nobody owns public projects -#}
+            public
+        {%- else -%}
+            {#- By default, project creator is the owner -#}
+            internal
+        {%- endif %}
   choices:
     Internal:
       value: internal
-      validator: >-
-        {% if repository_owner != 'arup-group' %}
-        Internal projects must have the `arup-group` repository owner
-        {% endif %}
     Public:
       value: public
+  when: "{{ repository_owner != 'arup-group' }}"
 
 upload_pip_package:
   help: Upload pip package to {% if project_visibility == 'public' %}PyPI{% elif project_visibility == 'internal' %}the Arup package index{% endif %} on each release of each new version?
