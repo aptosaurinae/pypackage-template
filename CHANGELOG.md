@@ -16,6 +16,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- Fix public repo error in `project_visibility` section of template (#13)
+- Fix public repo error in `open_source_license` section of template (#14)
+
+### Added
+
+### Changed
+
+- Changed PR template format to use `Resolves` instead of `Fixes` (more generic), as a bullet point for better formatting (#12)
+
+### Removed
+
+
 ## [v1.0.1] - 2025-03-27
 
 ### Fixed
