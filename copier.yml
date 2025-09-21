@@ -99,7 +99,7 @@ project_visibility:
       value: internal
     Public:
       value: public
-  when: "{{ repository_owner != 'arup-group' }}"
+  when: "{{ repository_owner == 'arup-group' }}"
 
 upload_pip_package:
   help: Upload pip package to {% if project_visibility == 'public' %}PyPI{% elif project_visibility == 'internal' %}the Arup package index{% endif %} on each release of each new version?
