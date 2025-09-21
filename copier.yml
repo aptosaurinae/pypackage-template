@@ -165,6 +165,7 @@ open_source_license:
   choices:
     "Not open source":
       value: not_open_source
+      validity: "{% if project_visibility == 'public' %}Requires internal visibility{% endif %}"
     "MIT license":
       value: MIT
     "BSD license":
